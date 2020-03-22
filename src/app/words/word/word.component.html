@@ -1,0 +1,7 @@
+<ng-container *ngIf="word.type != SyllableType.Barline; else next1">{{ word.text }}<ng-container
+        *ngIf="(word.type == SyllableType.WordStart || word.type == SyllableType.WordMiddle) && nextWord.type == SyllableType.Barline">-&nbsp;</ng-container>
+    <ng-container *ngIf="(word.type == SyllableType.WordEnd || word.type == SyllableType.Word)">&nbsp;</ng-container>
+</ng-container>
+<ng-template #next1>
+    <ng-container *ngIf="word.type == SyllableType.Barline">/&nbsp;</ng-container>
+</ng-template>

@@ -1,0 +1,3 @@
+<div cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)" [cdkDropListData]="wordsArray">
+    <app-word *ngFor="let word of wordsArray; let i = index" [word]="word" [nextWord]="wordsArray[i + 1]" [previousWord]="wordsArray[i - 1]" cdkDrag [cdkDragDisabled]="word.type != SyllableType.Barline"></app-word>
+</div>
